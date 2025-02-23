@@ -1,0 +1,119 @@
+/* Light Mode (Default) */
+body.dark-mode .services-container {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+}
+body.dark-mode .service-card {
+    background: var(--card-bg-dark);
+    box-shadow: 0px 4px 8px var(--shadow-dark);
+}
+body.dark-mode .service-card li {
+    color: var(--text-dark);
+}
+
+
+.services-container {
+    text-align: center;
+    padding: 80px 20px;
+    background: var(--bg-light);
+    color: var(--text-light);
+    min-height: 100vh;
+    transition: background 0.3s ease, color 0.3s ease;
+    margin-top: 100px;
+}
+
+/* Dark Mode */
+.services-container.dark {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+/* Title */
+.services-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .services-title {
+        font-size: 2rem;
+    }
+    .services-container {
+        margin-top: 0px;
+    }
+}
+
+/* Subtitle */
+.services-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.services-container.dark .services-subtitle {
+    color: var(--text-dark);
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+/* Service Card */
+.service-card {
+    background: var(--card-bg-light);
+    box-shadow: 0px 4px 8px var(--shadow-light);
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Dark Mode for Service Card */
+.service-card.dark {
+    background: var(--card-bg-dark);
+    box-shadow: 0px 4px 8px var(--shadow-dark);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    color: #ff6600;
+    margin-bottom: 10px;
+}
+
+/* List Styles */
+.service-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.service-card li {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    padding: 5px 0;
+    font-weight: 400;
+}
+
+/* Dark Mode for List Items */
+.service-card.dark li {
+    color: var(--text-dark);
+}
+
+@media (max-width: 768px) {
+    .service-card h3 {
+        font-size: 1.3rem;
+    }
+    .service-card li {
+        font-size: 1rem;
+    }
+}

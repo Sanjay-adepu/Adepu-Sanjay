@@ -1,0 +1,197 @@
+/* Root Variables */  
+:root {  
+    --primary-color: #007bff;  
+    --text-color-light: #333;  
+    --background-color-light: #ffffff;  
+    --text-color-dark: #ffffff;  
+    --background-color-dark: #121212;  
+    --nav-bg-light: rgba(255, 255, 255, 0.9);  
+    --nav-bg-dark: rgba(18, 18, 18, 0.9);  
+}  
+  
+/* Dark Mode Variables */  
+body.dark-mode {  
+    --text-color: var(--text-color-dark);  
+    --background-color: var(--background-color-dark);  
+    --nav-bg: var(--nav-bg-dark);  
+}  
+  
+/* Ensure body and html take full height & width */  
+html, body {  
+    margin: 0;  
+    padding: 0;  
+    width: 100%;  
+    height: 100%;  
+}  
+  
+  
+  
+/* Light Mode Variables */  
+body {  
+    font-family: "Poppins", sans-serif;  
+    background: var(--background-color-light);  
+    color: var(--text-color-light);  
+    transition: background 0.3s ease, color 0.3s ease;  
+}  
+  
+/* Navbar */  
+.navbar {  
+    display: flex;  
+    justify-content: space-between;  
+    align-items: center;  
+    padding: 15px 20px;  
+    position: fixed;  
+    width: 100%;  
+    top: 0;  
+    left: 0;  
+    background: var(--nav-bg-light);  
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  
+    z-index: 1000;  
+    transition: background 0.3s ease;  
+}  
+  
+body.dark-mode .navbar {  
+    background: var(--nav-bg-dark);  
+}  
+  
+/* Logo */  
+.logo img {  
+    height: 60px; /* Default size */  
+    width: auto;  
+    border-radius: 50%;  
+    padding: 5px;  
+    transition: background 0.3s ease-in-out;  
+}  
+  
+/* Change logo background when dark mode is enabled */  
+.dark .logo img {  
+    background: white;  
+    height: 40px; /* Slightly smaller */  
+    width: 40px;  
+}  
+  
+/* Navigation Links */  
+.nav-links {  
+    list-style: none;  
+    display: flex;  
+    align-items: center;  
+    gap: 25px;  
+    margin-right: 80px;  
+}  
+  
+.nav-links li {  
+    display: inline-block;  
+}  
+  
+.nav-links a {  
+    text-decoration: none;  
+    color: var(--text-color);  
+    font-size: 1.1rem;  
+    font-weight: 500;  
+    transition: color 0.3s ease;  
+}  
+  
+.nav-links a.active,  
+.nav-links a:hover {  
+    color: var(--primary-color);  
+}  
+  
+/* Dark Mode Button */  
+.dark-mode-toggle {  
+    display: flex;  
+    align-items: center;  
+}  
+  
+.dark-mode-btn {  
+    background: none;  
+    border: none;  
+    cursor: pointer;  
+    font-size: 1.5rem;  
+    color: var(--text-color);  
+    transition: transform 0.2s ease;  
+}  
+  
+.dark-mode-btn:hover {  
+    transform: scale(1.1);  
+}  
+  
+/* Hamburger Menu */  
+.menu-toggle {  
+    display: none;  
+    background: none;  
+    border: none;  
+    cursor: pointer;  
+}  
+  
+/* Default Hamburger (Bright Mode - Black) */  
+.hamburger span {  
+    display: block;  
+    width: 28px;  
+    height: 3px;  
+    background: black;  
+    border-radius: 5px;  
+    transition: all 0.3s ease;  
+}  
+  
+/* Dark Mode - Hamburger turns White */  
+.dark .hamburger span {  
+    background: white;  
+}  
+  
+/* Hamburger Open State */  
+.hamburger {  
+    display: flex;  
+    flex-direction: column;  
+    gap: 6px;  
+}  
+  
+.hamburger.open span:nth-child(1) {  
+    transform: rotate(45deg) translate(5px, 5px);  
+}  
+  
+.hamburger.open span:nth-child(2) {  
+    opacity: 0;  
+}  
+  
+.hamburger.open span:nth-child(3) {  
+    transform: rotate(-45deg) translate(5px, -5px);  
+}  
+  
+/* Mobile Responsive */  
+@media (max-width: 768px) {  
+    .menu-toggle {  
+        display: block;  
+        margin-right:40px;  
+    }  
+  
+    .nav-links {  
+        display: none;  
+        flex-direction: column;  
+        position: absolute;  
+        top: 60px;  
+        left: 0;  
+        width: 100%;  
+        background: var(--nav-bg-light);  
+        text-align: center;  
+        padding: 20px 0;  
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  
+    }  
+  
+    body.dark-mode .nav-links {  
+        background: var(--nav-bg-dark);  
+    }  
+  
+    .nav-links.open {  
+        display: flex;  
+    }  
+  
+    .nav-links li {  
+        display: block;  
+        margin: 15px 0;  
+    }  
+    .logo img{  
+      width:40px;  
+      height: 40px;  
+    }  
+}  
+  

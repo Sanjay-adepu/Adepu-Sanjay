@@ -1,0 +1,79 @@
+/* Home Page */
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background: var(--background-color-light);
+    transition: background 0.3s ease, color 0.3s ease;
+    width:100% !important;
+}
+
+body.dark-mode .home-container {
+    background: var(--background-color-dark);
+}
+
+/* Hero Section */
+.hero {
+    max-width: 700px;
+    padding: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.hero h1 span {
+    color: var(--primary-color);
+}
+.name-highlight {
+    color: #ff5733 !important; /* Change this to any color you prefer */
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-top: 10px;
+    line-height: 1.6;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .hero p {
+    color: #bbbbbb;
+}
+
+/* View My Work Button */
+
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}

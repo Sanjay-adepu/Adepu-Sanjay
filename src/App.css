@@ -1,0 +1,55 @@
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: black;
+    color: #333;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background: #121212;
+    color: #f4f4f4;
+}
+
+body.dark-mode {
+    --text-color: var(--text-color-dark);
+    --background-color: var(--background-color-dark);
+    --nav-bg: var(--nav-bg-dark);
+}
+
+
+
+/* Main App Container */
+.app-container {
+    transition: background 0.3s ease-in-out;
+    min-height: 100vh;
+}
+
+.app-container.dark {
+    background: var(--background-color-dark);
+    color: var(--text-color-dark);
+}
+
+
+/* Buttons */
+.btn {
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background: #0056b3;
+}

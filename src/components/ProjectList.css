@@ -1,0 +1,270 @@
+/* Container for all projects */
+.projects-container {
+  max-width: 13500px;
+  margin: 80px auto;
+  padding: 20px;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Dark Mode Support */
+.projects-container.dark {
+  background-color: #121212;
+  color: #f8f8f8;
+}
+
+/* Title Styling */
+.projects-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #333;
+  transition: color 0.3s ease-in-out;
+}
+
+.projects-container.dark .projects-title {
+  color: #f8f8f8;
+}
+
+/* Project Card Styling */
+.project-card {
+  background: #ffffff;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Dark Mode Project Card */
+.projects-container.dark .project-card {
+  background: #1e1e1e;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+/* Project Title */
+.project-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 10px;
+  transition: color 0.3s ease-in-out;
+}
+
+.projects-container.dark .project-title {
+  color: #e0e0e0;
+}
+
+/* Project Description */
+.project-description {
+  font-size: 1rem;
+  text-align:justify;
+  color: #555;
+  margin-bottom: 10px;
+  line-height: 1.6;
+  transition: color 0.3s ease-in-out;
+}
+
+.projects-container.dark .project-description {
+  color: #cfcfcf;
+}
+
+/* Tech Stack */
+.project-tech {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 15px;
+  transition: color 0.3s ease-in-out;
+}
+
+.projects-container.dark .project-tech {
+  color: #d1d1d1;
+}
+
+/* Swiper Slider */
+.project-slider {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.project-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-image:hover {
+  transform: scale(1.05);
+}
+
+/* Swiper Pagination Bullets */
+.swiper-pagination-bullet {
+  background: #007bff !important;
+}
+
+.projects-container.dark .swiper-pagination-bullet {
+  background: #f8f8f8 !important;
+}
+
+/* Project Links */
+.project-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.live-demo,
+.github-link {
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Live Demo Button */
+.live-demo {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.4);
+}
+
+.live-demo:hover {
+  background: linear-gradient(135deg, #0056b3, #007bff);
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 15px rgba(0, 123, 255, 0.6);
+}
+
+/* GitHub Button */
+.github-link {
+  background: linear-gradient(135deg, #28a745, #1e7e34);
+  color: white;
+  box-shadow: 0px 4px 10px rgba(40, 167, 69, 0.4);
+}
+
+.github-link:hover {
+  background: linear-gradient(135deg, #1e7e34, #28a745);
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 15px rgba(40, 167, 69, 0.6);
+}
+
+/* Dark Mode Button Effects */
+.projects-container.dark .live-demo {
+  background: linear-gradient(135deg, #0056b3, #007bff);
+  box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+.projects-container.dark .github-link {
+  background: linear-gradient(135deg, #1e7e34, #28a745);
+  box-shadow: 0px 4px 10px rgba(40, 167, 69, 0.3);
+}
+
+/* Loading and Error States */
+.loading,
+.error {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #ff0000;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: color 0.3s ease-in-out;
+}
+
+.projects-container.dark .error {
+  color: #ff6666;
+}
+/* Full-width images on mobile */
+@media (max-width: 768px) {
+  .project-image {
+    width: 100%;
+    height: auto;
+  }
+  .project-description{
+    font-size:0.5rem;
+  }
+}
+
+/* Lightbox Effect for Fullscreen Image */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox-image {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+.lightbox:hover .lightbox-image {
+  transform: scale(1.05);
+}
+
+/* Replacing GitHub with More Info */
+.more-info {
+  background: linear-gradient(135deg, #f39c12, #e67e22);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+  box-shadow: 0px 4px 10px rgba(243, 156, 18, 0.4);
+  transition: all 0.3s ease-in-out;
+}
+
+.more-info:hover {
+  background: linear-gradient(135deg, #e67e22, #f39c12);
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 15px rgba(243, 156, 18, 0.6);
+}
+/* Tech Stack Styling */
+.project-tech {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-tech strong {
+  color: #ff6600; /* Dark gray for strong emphasis */
+}
+
+.project-tech span {
+  background: #222; /* Dark background for contrast */
+  color: #fff; /* White text */
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+.project-tech span:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+}
