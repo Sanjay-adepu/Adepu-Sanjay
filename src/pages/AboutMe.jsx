@@ -17,22 +17,25 @@ const useTypingEffect = (texts, delay = 2000) => {
         const text = texts[index];
 
         if (isDeleting) {
-            setCurrentText((prev) => prev.slice(0, -1));
-            if (currentText === "") {
+            if (charIndex > 0) {
+                setCurrentText(text.slice(0, charIndex - 1));
+                setCharIndex((prev) => prev - 1);
+            } else {
                 setIsDeleting(false);
                 setIndex((prev) => (prev + 1) % texts.length);
             }
         } else {
-            setCurrentText(text.slice(0, charIndex + 1));
-            if (charIndex + 1 === text.length) {
+            if (charIndex < text.length) {
+                setCurrentText(text.slice(0, charIndex + 1));
+                setCharIndex((prev) => prev + 1);
+            } else {
                 setTimeout(() => setIsDeleting(true), delay);
             }
         }
-        setCharIndex((prev) => (isDeleting ? prev - 1 : prev + 1));
 
         const timer = setTimeout(() => {}, isDeleting ? 50 : 100);
         return () => clearTimeout(timer);
-    }, [currentText, charIndex, isDeleting, index, texts, delay]);
+    }, [charIndex, isDeleting, index]);
 
     return currentText;
 };
