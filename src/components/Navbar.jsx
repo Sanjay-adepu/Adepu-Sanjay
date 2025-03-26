@@ -14,9 +14,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
     return (
         <nav className={`navbar ${darkMode ? "dark" : ""}`}>
             {/* Logo Section */}
-            <div className="logo">
-                <img src="./file-V8aAeiWnjAvjr71pK1vm3o__1_-removebg-preview.png" alt="Logo" />
-            </div>
+            
 
             {/* Hamburger Menu Button */}
             <button className="menu-toggle" onClick={toggleMenu}>
