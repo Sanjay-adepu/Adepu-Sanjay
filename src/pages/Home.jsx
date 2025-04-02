@@ -4,14 +4,36 @@ import "./Home.css"; // External CSS
 
 const Home = () => {  
     useEffect(() => {
-        const script = document.createElement("script");
-        script.src = "//www.highperformanceformat.com/4014888afba649c3097350fc2b5cce4e/invoke.js";
-        script.async = true;
-        document.getElementById("ad-container")?.appendChild(script);
+        // Inject atOptions configuration
+        const scriptConfig = document.createElement("script");
+        scriptConfig.type = "text/javascript";
+        scriptConfig.innerHTML = `
+            atOptions = {
+                'key' : '4014888afba649c3097350fc2b5cce4e',
+                'format' : 'iframe',
+                'height' : 60,
+                'width' : 468,
+                'params' : {}
+            };
+        `;
+        document.getElementById("ad-container")?.appendChild(scriptConfig);
+
+        // Inject Ad Script
+        const scriptAd = document.createElement("script");
+        scriptAd.type = "text/javascript";
+        scriptAd.src = "//www.highperformanceformat.com/4014888afba649c3097350fc2b5cce4e/invoke.js";
+        scriptAd.async = true;
+        document.getElementById("ad-container")?.appendChild(scriptAd);
     }, []);
 
     return (  
         <div className="home-container">  
+
+       {/* Ad Container */}
+                <div id="ad-container" style={{ marginTop: "20px", textAlign: "center" }}></div>
+            </div>  
+
+
             <div className="hero">  
                 <h1>Hi, I'm <span className="name-highlight">Adepu Sanjay</span>, a <span>Full Stack Web Developer</span></h1>  
                 <p>I build high-quality web applications with modern technologies.</p>  
@@ -53,9 +75,7 @@ const Home = () => {
                     View My Work
                 </Link>
 
-                {/* Ad Container */}
-                <div id="ad-container" style={{ marginTop: "20px", textAlign: "center" }}></div>
-            </div>  
+                
         </div>  
     );  
 };  
