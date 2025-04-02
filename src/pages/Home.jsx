@@ -2,29 +2,32 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Home.css"; // External CSS  
 
+
+
+
 const Home = () => {  
     useEffect(() => {
-        // Inject atOptions configuration
-        const scriptConfig = document.createElement("script");
-        scriptConfig.type = "text/javascript";
-        scriptConfig.innerHTML = `
-            atOptions = {
-                'key' : '4014888afba649c3097350fc2b5cce4e',
-                'format' : 'iframe',
-                'height' : 60,
-                'width' : 468,
-                'params' : {}
-            };
-        `;
-        document.getElementById("ad-container")?.appendChild(scriptConfig);
+    // Inject atOptions configuration
+    const scriptConfig = document.createElement("script");
+    scriptConfig.type = "text/javascript";
+    scriptConfig.innerHTML = `
+        atOptions = {
+            'key' : '4b9befa8e8725595f398b188958d3402',
+            'format' : 'iframe',
+            'height' : 250,
+            'width' : 300,
+            'params' : {}
+        };
+    `;
+    document.getElementById("ad-container")?.appendChild(scriptConfig);
 
-        // Inject Ad Script
-        const scriptAd = document.createElement("script");
-        scriptAd.type = "text/javascript";
-        scriptAd.src = "//www.highperformanceformat.com/4014888afba649c3097350fc2b5cce4e/invoke.js";
-        scriptAd.async = true;
-        document.getElementById("ad-container")?.appendChild(scriptAd);
-    }, []);
+    // Inject Ad Script
+    const scriptAd = document.createElement("script");
+    scriptAd.type = "text/javascript";
+    scriptAd.src = "//www.highperformanceformat.com/4b9befa8e8725595f398b188958d3402/invoke.js";
+    scriptAd.async = true;
+    document.getElementById("ad-container")?.appendChild(scriptAd);
+}, []);
 
     return (  
     <div className="home-container">  
