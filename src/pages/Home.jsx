@@ -12,10 +12,10 @@ const Home = () => {
     scriptConfig.type = "text/javascript";
     scriptConfig.innerHTML = `
         atOptions = {
-            'key' : '4b9befa8e8725595f398b188958d3402',
+            'key' : '4014888afba649c3097350fc2b5cce4e',
             'format' : 'iframe',
-            'height' : 250,
-            'width' : 300,
+            'height' : 60,
+            'width' : 468,
             'params' : {}
         };
     `;
@@ -24,11 +24,10 @@ const Home = () => {
     // Inject Ad Script
     const scriptAd = document.createElement("script");
     scriptAd.type = "text/javascript";
-    scriptAd.src = "//www.highperformanceformat.com/4b9befa8e8725595f398b188958d3402/invoke.js";
+    scriptAd.src = "//www.highperformanceformat.com/4014888afba649c3097350fc2b5cce4e/invoke.js";
     scriptAd.async = true;
     document.getElementById("ad-container")?.appendChild(scriptAd);
 }, []);
-
     return (  
     <div className="home-container">  
 
