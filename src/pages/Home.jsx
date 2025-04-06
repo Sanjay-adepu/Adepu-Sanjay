@@ -74,7 +74,7 @@ const Home = () => {
             >
                 View My Work
             </Link>
-<a href="https://www.effectiveratecpm.com/x346tkqca?key=70af28cd6732fa96465ee19cd5f428d1">Click here</a>
+
         </div>  
     </div>  
 );
