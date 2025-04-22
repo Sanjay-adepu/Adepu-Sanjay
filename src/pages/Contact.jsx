@@ -13,7 +13,7 @@ const Contact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post("https://adepu-sanjay-svf9.vercel.app/contact", formData);
+            const res = await axios.post("https://adepu-sanjay-svf9.vercel.app/api/contact", formData);
             if (res.data.success) {
                 setSuccess("Message sent successfully!");
                 setFormData({ name: "", email: "", message: "" });
